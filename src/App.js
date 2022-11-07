@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import {Route, Link, Switch} from 'react-router-dom'
+import Form from './components/Form/Form'
+import ArticleBox from './components/ArticleBox/ArticleBox'
+import SingleArticleDetails from './components/SingleArticleDetails/SingleArticleDetails'
+import {useState} from 'react'
 
 function App() {
+
+  const [topic, setTopic] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form setTopic={setTopic}/>
+      <Switch>
+        <Route exact path='/' render={() => <ArticleBox topic={topic}/>}/>
+        <Route exact path='/articleDetails' render={() => <SingleArticleDetails/>}/>
+      </Switch>
     </div>
   );
 }
