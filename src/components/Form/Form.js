@@ -1,4 +1,4 @@
-import './Form.css'
+import './Form.css';
 
 
 const Form = ({setTopic}) => {
@@ -36,8 +36,6 @@ const Form = ({setTopic}) => {
         </select>
       </div>
     )
-
-
 }
 
 export default Form;

@@ -1,8 +1,11 @@
-import './SingleArticle.css'
+import './SingleArticle.css';
+import { Link } from 'react-router-dom';
 
-const SingleArticle = ({subsection, title, url, image, caption}) => {
+const SingleArticle = ({title}) => {
     return (
-        <p>{title}</p>
+        <div className='single-article'>
+            <Link to={`/${title}/details`}><p>{title}</p></Link>
+        </div>  
     )
 }
 

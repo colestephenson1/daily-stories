@@ -1,40 +1,33 @@
-import './ArticleBox.css'
-import { useState, useEffect } from 'react' 
-import SingleArticle from '../SingleArticle/SingleArticle'
+import './ArticleBox.css';
+import { useEffect } from 'react'; 
+import SingleArticle from '../SingleArticle/SingleArticle';
 
-const ArticleBox = ({topic}) => {
+const ArticleBox = ({results, setResults, topic}) => {
 
-    const [results, setResults] = useState([])
-    let mappedResults
-
-    
+    let mappedResults;
 
     useEffect(() => {
 
-        const fetchArticles = (topicChoice) => {
-            return fetch(`https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=YMwGtcuTdYGINAxVqRw5puQauT6dAhD3`)
-            .then(response => response.json())
-            .then(data => {
-                setResults(data.results) 
-            })      
+        const fetchArticles = async (topicChoice) => {
+            const response = await fetch(`https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=YMwGtcuTdYGINAxVqRw5puQauT6dAhD3`);
+            const data = await response.json();
+            setResults(data.results);      
         }
-        fetchArticles(topic)
-    }, [topic])
+
+        fetchArticles(topic);
+
+    }, [topic, setResults])
 
 
 
     if(results) {
-        let count = 0
+        let count = 0;
         mappedResults = results.map(result => {
-            count ++
-            const {subsection, title, short_url, multimedia} = result
+            count ++;
+            const {title} = result
             return (
                 <SingleArticle
-                    subsection={subsection}
                     title={title}
-                    url={short_url}
-                    image={multimedia[0].url}
-                    caption={multimedia[0].caption}
                     key={count}
                 />
             )
@@ -46,7 +39,6 @@ const ArticleBox = ({topic}) => {
             {mappedResults}
         </div>
     )
-
 }
 
 export default ArticleBox;
