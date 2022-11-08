@@ -7,7 +7,7 @@ const SingleArticleDetails = ({article}) => {
     return(
         <div className='details-box'>
             <div className='image-and-title'>
-                <img src={multimedia[0].url} alt={multimedia[0].caption}/>
+                <img className='pic' src={multimedia[0].url} alt={multimedia[0].caption}/>
                 <p>{title} {byline}</p>
             </div>
             <p className='abstract'>{abstract}</p>

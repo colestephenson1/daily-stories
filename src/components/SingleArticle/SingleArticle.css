@@ -1,0 +1,13 @@
+.single-article {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.article-title{
+    font-size: 25px;
+}
+
+a{
+    text-decoration: underline;
+    color: black;
+}
