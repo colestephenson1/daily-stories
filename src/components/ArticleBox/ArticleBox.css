@@ -1,0 +1,11 @@
+.article-box{
+    height: 75vh;
+    width: 75vw;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    border-radius: 5px;
+    margin-top: 50px;
+    overflow-y: scroll;
+}

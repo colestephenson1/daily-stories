@@ -1,0 +1,14 @@
+.greeting {
+    height: 75vh;
+    width: 50vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.greeting-message{
+    font-size: 30px;
+}
