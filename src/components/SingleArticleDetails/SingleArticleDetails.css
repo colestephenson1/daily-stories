@@ -17,3 +17,17 @@
     object-fit: cover;
 
 }
+
+@media(max-height: 786px) {
+    .pic{
+        height: 50vh;
+        width: 23vw;
+        border: 1px solid black;
+        object-fit: cover;
+        margin-top: 15px;  
+    }
+
+    h2{
+        font-size: 16px;
+    }
+}

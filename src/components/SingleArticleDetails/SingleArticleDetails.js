@@ -8,7 +8,7 @@ const SingleArticleDetails = ({article}) => {
         <div className='details-box'>
             <div className='image-and-title'>
                 <img className='pic' src={multimedia[0].url} alt={multimedia[0].caption}/>
-                <p>{title} {byline}</p>
+                <h2>{title} {byline}</h2>
             </div>
             <p className='abstract'>{abstract}</p>
             <a className='nyt-link' target="_blank" rel="noreferrer" href={short_url}>Link to this article at NYT</a>
