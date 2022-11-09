@@ -42,7 +42,7 @@
 
 ## Sources
   - [MDN](http://developer.mozilla.org/en-US/)
-  - [NYT API(https://developer.nytimes.com/apis)
+  - [NYT API(https://developer.nytimes.com/apis)]
 
 ## Contributors
   - [Cole Stephenson](https://github.com/colestephenson1)
