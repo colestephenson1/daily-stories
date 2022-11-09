@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import Form from './components/Form/Form'
 import ArticleBox from './components/ArticleBox/ArticleBox'
 import SingleArticleDetails from './components/SingleArticleDetails/SingleArticleDetails'
+import Header from './components/Header/Header'
+import Greeting from './components/Greeting/Greeting'
 import { useState } from 'react'
 
 function App() {
@@ -12,9 +14,10 @@ function App() {
 
   return (
     <div className="App">
+      <Header/>
       <Form setTopic={setTopic}/>
       <Switch>
-        <Route exact path='/' render={() => <ArticleBox topic={topic} results={results} setResults={setResults}/>}/>
+        <Route exact path='/' render={() => topic ? <ArticleBox topic={topic} results={results} setResults={setResults}/> : <Greeting/>}/>
         <Route exact path='/:title/details' render={({match}) => {
          let chosenArticle = results.find(article => article.title === match.params.title)
          return <SingleArticleDetails article={chosenArticle}/>
