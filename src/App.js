@@ -18,8 +18,8 @@ function App() {
       <Form setTopic={setTopic}/>
       <Switch>
         <Route exact path='/' render={() => topic ? <ArticleBox topic={topic} results={results} setResults={setResults}/> : <Greeting/>}/>
-        <Route exact path='/:title/details' render={({match}) => {
-         let chosenArticle = results.find(article => article.title === match.params.title)
+        <Route exact path='/:date/details' render={({match}) => {
+         let chosenArticle = results.find(article => article.published_date === match.params.date)
          return <SingleArticleDetails article={chosenArticle}/>
         }}/>
       </Switch>
