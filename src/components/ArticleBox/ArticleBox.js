@@ -11,7 +11,8 @@ const ArticleBox = ({results, setResults, topic}) => {
         const fetchArticles = async (topicChoice) => {
             const response = await fetch(`https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=YMwGtcuTdYGINAxVqRw5puQauT6dAhD3`);
             const data = await response.json();
-            setResults(data.results);      
+            let filtered = data.results.filter(article => article.title)
+            setResults(filtered);      
         }
 
         fetchArticles(topic);
@@ -24,10 +25,11 @@ const ArticleBox = ({results, setResults, topic}) => {
         let count = 0;
         mappedResults = results.map(result => {
             count ++;
-            const {title} = result
+            const {title, published_date} = result
             return (
                 <SingleArticle
                     title={title}
+                    date={published_date}
                     key={count}
                 />
             )

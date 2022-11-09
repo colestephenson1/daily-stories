@@ -6,7 +6,7 @@ const Form = ({setTopic}) => {
     return(
         <div className='form'>
         <select className='topic' name='topic' onChange={(event) => setTopic(event.target.value)}>
-          <option value='choose-topic' defaultValue>Search By Topic</option>
+          <option value='choose-topic' defaultValue>Search</option>
           <option value='arts'>Arts</option>
           <option value='automobiles'>Automobiles</option>
           <option value='books'>Books</option>
