@@ -8,14 +8,14 @@ const ArticleBox = ({results, setResults, topic}) => {
 
     useEffect(() => {
 
-        const fetchArticles = async (topicChoice) => {
+        const fetchArticles = async () => {
             const response = await fetch(`https://api.nytimes.com/svc/topstories/v2/${topic}.json?api-key=YMwGtcuTdYGINAxVqRw5puQauT6dAhD3`);
             const data = await response.json();
             let filtered = data.results.filter(article => article.title)
             setResults(filtered);      
         }
 
-        fetchArticles(topic);
+        fetchArticles();
 
     }, [topic, setResults])
 

@@ -12,3 +12,16 @@
 .greeting-message{
     font-size: 30px;
 }
+
+@media(max-width: 414px) {
+    .greeting {
+        height: 75vh;
+        width: 100vw;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        margin-top: 50px;
+    }
+}
