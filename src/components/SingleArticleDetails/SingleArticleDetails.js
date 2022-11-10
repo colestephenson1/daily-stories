@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const SingleArticleDetails = ({article}) => {
 
-    console.log(article)
-
     const {title, multimedia, short_url, abstract, byline } = article;
     return(
         <div className='details-box'>

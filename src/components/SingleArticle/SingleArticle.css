@@ -3,11 +3,18 @@
     border-radius: 5px;
 }
 
-.article-title{
+.article-title {
     font-size: 25px;
 }
 
-a{
+a {
     text-decoration: underline;
     color: black;
+}
+
+@media(max-width: 414px) {
+    .article-title {
+        font-size: 18px;
+    }
+    
 }
