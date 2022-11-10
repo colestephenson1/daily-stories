@@ -6,12 +6,10 @@
   - [Introduction](#introduction)
   - [Technologies](#technologies)
   - [Features](#features)
-  - [Possible Future Extensions](#possible-future-extensions)
   - [Set Up](#set-up)
   - [Organizational Resources](#organizational-resources)
   - [Sources](#sources)
   - [Contributors](#contributors)
-  - [Project Specs](#project-specs)
 
 ## Introduction
   - The goal of this project was to create a React application that showcases my  concrete grasp of foundational React/Cypress skills. 
